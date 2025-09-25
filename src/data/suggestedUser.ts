@@ -1,0 +1,42 @@
+export const suggestedUser = [
+  {
+    id: "u101",
+    username: "johndoe",
+    displayName: "John Doe",
+    avatar: "https://i.pravatar.cc/150?img=11",
+    verified: true,
+    bio: "Frontend dev • React & TypeScript enthusiast",
+  },
+  {
+    id: "u102",
+    username: "sarah_dev",
+    displayName: "Sarah Codes",
+    avatar: "https://i.pravatar.cc/150?img=13",
+    verified: false,
+    bio: "Building cool stuff with Next.js 🚀",
+  },
+  {
+    id: "u103",
+    username: "techguru",
+    displayName: "Tech Guru",
+    avatar: "https://i.pravatar.cc/150?img=15",
+    verified: true,
+    bio: "Sharing the latest in AI, startups & coding tips.",
+  },
+  {
+    id: "u104",
+    username: "emmawrites",
+    displayName: "Emma Writes",
+    avatar: "https://i.pravatar.cc/150?img=19",
+    verified: false,
+    bio: "Writer ✍️ | Storytelling & creativity advocate",
+  },
+  {
+    id: "u105",
+    username: "michael23",
+    displayName: "Michael Jordan",
+    avatar: "https://i.pravatar.cc/150?img=21",
+    verified: true,
+    bio: "Basketball • Motivation • Hustle 🏀",
+  },
+]
