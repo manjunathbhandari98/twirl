@@ -13,7 +13,7 @@ const Header = () => {
         <img
           src="/twirl-logo.png"
           alt="logo"
-          className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20"
+          className="w-12 h-12 sm:w-12 sm:h-12 lg:w-14 lg:h-14"
         />
       </div>
 
