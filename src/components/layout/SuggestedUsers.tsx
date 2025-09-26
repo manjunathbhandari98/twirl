@@ -6,7 +6,7 @@ const SuggestedUser = () =>{
         <div className="rounded-xl p-4 border space-y-5">
             <h2 className="font-medium text-xl">Suggestions</h2>
             {suggestedUser.map((suggestion) =>(
-                <div className="flex justify-between items-center">
+                <div key={suggestion.id} className="flex justify-between items-center">
                     <div className="flex gap-3">
           {/* Profile Image */}
           <img

@@ -2,7 +2,13 @@
 export interface User {
   id: string
   username: string
+  email:string,
+  bio:string,
   displayName: string
+  followerCount:number,
+  followingCount:number,
+  postCount:number,
+  theme:string,
   avatar: string
   verified?: boolean
 }
@@ -27,20 +33,20 @@ export interface Poll{
   expiresAt:string
 }
 
+// export interface Twirl {
+//   id: string
+//   user: User
+//   content: string
+//   media: string[]        // image or video URLs
+//   poll ?: Poll,
+//   createdAt: string      // ISO date string
+//   likes: number
+//   retweets: number
+//   comments: Comment[]
+// }
+
+
 export interface Twirl {
-  id: string
-  user: User
-  content: string
-  media: string[]        // image or video URLs
-  poll ?: Poll,
-  createdAt: string      // ISO date string
-  likes: number
-  retweets: number
-  comments: Comment[]
-}
-
-
-export interface Post {
   id: string;
   author: User;
   content: string;
@@ -51,9 +57,11 @@ export interface Post {
   replyCount: number;
   shareCount: number;
   views: number;
+  retwirls:number;
+  visibility:'public'|'private'|'temporary';
   isBookmarked: boolean;
   parentId?: string;
-  replies?: Post[];
+  replies?: Twirl[];
   isScheduled?: boolean;
   scheduledFor?: Date;
   expiresAt?: Date;

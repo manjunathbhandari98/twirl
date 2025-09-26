@@ -1,9 +1,9 @@
-import { BadgeCheck, Heart, MessageCircle,  Repeat2 } from "lucide-react";
-import type { Comment } from "../../types";
+import { BadgeCheck, Heart, MessageCircle, Repeat2 } from "lucide-react";
+import type { Twirl } from "../../types";
 import { formatTweetDate } from "../../utils/formatDate";
 
 type ReplyProps = {
-    reply: Comment
+    reply: Twirl
 }
 
 const ReplyBox = ({reply}:ReplyProps) =>{
@@ -13,8 +13,8 @@ const ReplyBox = ({reply}:ReplyProps) =>{
         <div className="flex gap-3">
           {/* Profile Image */}
           <img
-            src={reply.user.avatar}
-            alt={reply.user.username}
+            src={reply.author.avatar}
+            alt={reply.author.username}
             className="rounded-full w-11 h-11 border"
           />
 
@@ -22,16 +22,16 @@ const ReplyBox = ({reply}:ReplyProps) =>{
           <div className="flex flex-col">
             <div className="flex items-center gap-1">
               <h2 className="font-semibold text-base">
-                {reply.user.displayName}
+                {reply.author.displayName}
               </h2>
-              {reply.user.verified && (
+              {reply.author.verified && (
                 <BadgeCheck className="w-4 h-4 text-sky-500" />
               )}
             </div>
             <div className="flex gap-2 text-sm text-gray-500">
-              <p>@{reply.user.username}</p>
+              <p>@{reply.author.username}</p>
               <span>·</span>
-              <p>{formatTweetDate(reply.createdAt)}</p>
+              <p>{formatTweetDate(reply.createdAt.toISOString())}</p>
             </div>
           </div>
         </div>

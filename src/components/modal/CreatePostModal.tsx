@@ -9,9 +9,10 @@ import {
 } from 'lucide-react';
 import { useState, type ChangeEvent } from 'react';
 import { useDispatch } from 'react-redux';
-import { suggestedUser } from '../../data/suggestedUser';
+import { currentUser } from '../../data/profile';
 import { twirls } from '../../data/twirls';
 import { closeModal } from '../../redux/PostSlice';
+import { generateId } from '../../utils/generateId';
 
 const CreatePostModal = () => {
   const dispatch = useDispatch();
@@ -19,25 +20,43 @@ const CreatePostModal = () => {
   const [typedWords, setTypedWords] = useState(0);
   const [selectedVisibility, setSelectedVisibility] = useState(1);
   const [postContent, setPostContent] = useState('');
+  // const [postMedias, setPostMedias] = useState([]);
+  const [selectedSchedule, setSelectedSchedule] = useState<Date>();
 
   const handlePostContent = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setTypedWords(e.target.value.length);
     setPostContent(e.target.value);
   };
 
-  const handleSubmit = () =>{
+  const handleSubmit = () => {
+    const visiblity  = selectedVisibility == 1 ? 'public' : selectedVisibility == 2 ? 'private': 'temporary';
     twirls.push({
-      id:'test1',
-      user: suggestedUser[1],
-        content: postContent,
-        media: [],  
-        createdAt: new Date().toISOString(),     // ISO date string
-        likes: 0,
-        retweets: 0,
-        comments: []
-    })
-    dispatch(closeModal())
-  }
+      id: generateId('twirl'),
+      author: currentUser,
+      content: postContent,
+      media: [
+      ],
+      createdAt: new Date(), 
+      reactions: {
+        like: 0,
+        love: 0,
+        laugh: 0,
+        angry: 0,
+        sad: 0,
+        wow: 0,
+      },
+      replyCount: 0,
+      shareCount: 0,
+      views: 0,
+      retwirls:0,
+      isBookmarked: false,
+      replies: [],
+      isScheduled: selectedVisibility == 3 ? true : false,
+      expiresAt: selectedVisibility == 3 ? selectedSchedule : undefined,
+      visibility: visiblity,
+    });
+    dispatch(closeModal());
+  };
 
   const visibilityOption = [
     {
@@ -115,15 +134,17 @@ const CreatePostModal = () => {
                 onChange={() => setSelectedVisibility(option.id)}
                 className="w-4 h-4"
               />
-              
             </label>
           ))}
-               {selectedVisibility === 3 && (
-  <input
-    type="datetime-local"
-    className="border border-gray-600 rounded-md p-2 w-full"
-  />
-)}
+          {selectedVisibility === 3 && (
+            <input
+  type="datetime-local"
+  value={selectedSchedule ? selectedSchedule.toISOString().slice(0, 16) : ""}
+  onChange={(e) => setSelectedSchedule(new Date(e.target.value))}
+  className="border border-gray-600 rounded-md p-2 w-full"
+/>
+
+          )}
         </div>
 
         <div className="mt-5 border-t pt-4 border-gray-600 flex justify-between items-center">
@@ -148,9 +169,10 @@ const CreatePostModal = () => {
             >
               Cancel
             </button>
-            <button 
-            onClick={handleSubmit}
-            className="py-2 px-4 cursor-pointer rounded-xl bg-[#0a0018] text-white">
+            <button
+              onClick={handleSubmit}
+              className="py-2 px-4 cursor-pointer rounded-xl bg-[#0a0018] text-white"
+            >
               Post
             </button>
           </div>
