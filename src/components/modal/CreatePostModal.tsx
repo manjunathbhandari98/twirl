@@ -1,5 +1,4 @@
 import {
-  ChartBar,
   ChartColumn,
   EyeOff,
   Globe,
@@ -8,20 +7,37 @@ import {
   Video,
   X,
 } from 'lucide-react';
-import { useDispatch } from 'react-redux';
-import { closeModal } from '../../redux/PostSlice';
 import { useState, type ChangeEvent } from 'react';
+import { useDispatch } from 'react-redux';
+import { suggestedUser } from '../../data/suggestedUser';
+import { twirls } from '../../data/twirls';
+import { closeModal } from '../../redux/PostSlice';
 
 const CreatePostModal = () => {
   const dispatch = useDispatch();
-  const totalWords = 30;
+  const totalWords = 300;
   const [typedWords, setTypedWords] = useState(0);
   const [selectedVisibility, setSelectedVisibility] = useState(1);
   const [postContent, setPostContent] = useState('');
 
   const handlePostContent = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setTypedWords(e.target.value.length);
+    setPostContent(e.target.value);
   };
+
+  const handleSubmit = () =>{
+    twirls.push({
+      id:'test1',
+      user: suggestedUser[1],
+        content: postContent,
+        media: [],  
+        createdAt: new Date().toISOString(),     // ISO date string
+        likes: 0,
+        retweets: 0,
+        comments: []
+    })
+    dispatch(closeModal())
+  }
 
   const visibilityOption = [
     {
@@ -132,7 +148,9 @@ const CreatePostModal = () => {
             >
               Cancel
             </button>
-            <button className="py-2 px-4 cursor-pointer rounded-xl bg-[#0a0018] text-white">
+            <button 
+            onClick={handleSubmit}
+            className="py-2 px-4 cursor-pointer rounded-xl bg-[#0a0018] text-white">
               Post
             </button>
           </div>

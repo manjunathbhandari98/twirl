@@ -1,5 +1,6 @@
 import { Bell, Search } from "lucide-react";
-import { useDispatch,  } from "react-redux";
+import { useDispatch, } from "react-redux";
+import { toggleNotificationModal } from "../../redux/NotificationSlice";
 import { openModal } from "../../redux/PostSlice";
 
 const Header = () => {
@@ -32,11 +33,14 @@ const Header = () => {
         {/* Create Post (desktop only) */}
         <button
         onClick={() => dispatch(openModal())}
-        className="hidden sm:block bg-[#0a0018] py-2 px-4 rounded-2xl text-white text-sm hover:bg-[#1a0030] transition">
+        className="hidden sm:block bg-[#0a0018] py-2 px-4 rounded-xl text-white text-sm hover:bg-[#1a0030] transition">
           Create Post
         </button>
-
-        <Bell className="w-5 h-5 cursor-pointer sm:block hidden" />
+<button
+onClick={() =>dispatch(toggleNotificationModal())}
+className="cursor-pointer sm:block hidden">
+        <Bell className="w-5 h-5 " />
+</button>
 
         <div className="rounded-full overflow-hidden w-8 h-8 sm:w-10 sm:h-10">
           <img

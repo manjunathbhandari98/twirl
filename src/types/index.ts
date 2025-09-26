@@ -38,3 +38,55 @@ export interface Twirl {
   retweets: number
   comments: Comment[]
 }
+
+
+export interface Post {
+  id: string;
+  author: User;
+  content: string;
+  media?: MediaItem[];
+  poll?: Poll;
+  createdAt: Date;
+  reactions: Reactions;
+  replyCount: number;
+  shareCount: number;
+  views: number;
+  isBookmarked: boolean;
+  parentId?: string;
+  replies?: Post[];
+  isScheduled?: boolean;
+  scheduledFor?: Date;
+  expiresAt?: Date;
+  collaborators?: User[];
+  threadId?: string;
+}
+
+
+export interface Reactions {
+  like: number;
+  love: number;
+  laugh: number;
+  angry: number;
+  sad: number;
+  wow: number;
+  userReaction?: string;
+}
+
+export interface Notification {
+  id: string;
+  type: 'like' | 'comment' | 'follow' | 'mention' | 'retweet' | 'thread_update';
+  user: User;
+  post?: Twirl;
+  message: string;
+  createdAt: string;
+  isRead: boolean;
+}
+
+
+export interface MediaItem {
+  id: string;
+  type: 'image' | 'video';
+  url: string;
+  thumbnail?: string;
+  alt?: string;
+}
