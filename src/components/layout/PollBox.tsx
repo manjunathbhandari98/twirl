@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import { ChartBar, Clock } from "lucide-react";
 import { useState } from "react";
 import type { Poll } from "../../types";
@@ -13,16 +12,15 @@ const PollBox = ({ poll }: PollBoxProps) => {
   const [totalVotes, setTotalVotes] = useState(poll.totalVotes);
 
   const handleVote = (id: string) => {
-  
     setSelected(id);
 
-    // Update votes locally
-    const updated = options.map((opt) =>
-      opt.id === id ? { ...opt, votes: opt.votes + 1 } : opt
+    setOptions((prevOptions) =>
+      prevOptions.map((opt) =>
+        opt.id === id ? { ...opt, votes: opt.votes + 1 } : opt
+      )
     );
 
-    setOptions(updated);
-    setTotalVotes(totalVotes + 1);
+    setTotalVotes((prevTotal) => prevTotal + 1);
   };
 
   return (
@@ -76,7 +74,7 @@ const PollBox = ({ poll }: PollBoxProps) => {
         </div>
         <div className="flex gap-1 text-gray-600 text-sm items-center">
           <Clock size={14} />
-          <p>{format(new Date(poll.expiresAt), "MMM d, yyyy")}</p>
+          {/* <p>{formatDate(poll.expiresAt)}</p> */}
         </div>
       </div>
     </div>

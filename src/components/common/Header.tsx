@@ -1,6 +1,7 @@
 import { Bell, Bookmark, LogOut, Search, Settings, User } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { currentUser } from "../../data/profile";
 import { toggleNotificationModal } from "../../redux/NotificationSlice";
 import { openModal } from "../../redux/PostSlice";
@@ -9,6 +10,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -22,7 +24,7 @@ const Header = () => {
   }, []);
 
   const dropdownOptions = [
-    {name:'Account', link:'', icon:<User size={16}/>},
+    {name:'Account', link:`/${currentUser.username}`, icon:<User size={16}/>},
     {name:'Saved', link:'', icon:<Bookmark size={16}/>},
     {name:'Settings', link:'', icon:<Settings size={16}/>}
   ]
@@ -31,7 +33,9 @@ const Header = () => {
     <>
       <header className="flex justify-between items-center px-4 py-2 relative">
         {/* Logo */}
-        <div className="flex items-center">
+        <div
+        onClick={() => navigate('/')}
+        className="flex items-center">
           <img
             src="/twirl-logo.png"
             alt="logo"

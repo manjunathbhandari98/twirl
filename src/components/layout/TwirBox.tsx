@@ -60,23 +60,35 @@ const TwirlBox = ({ twirl }: TwirlBoxProps) => {
       <div className="mt-3">
         <p className="text-[15px] leading-relaxed">{twirl.content}</p>
         {/* Media Content */}
-       {Array.isArray(twirl.media) && twirl.media.length > 0 && (
+       {/* Media Content */}
+{Array.isArray(twirl.media) && twirl.media.length > 0 && (
   <div
     className={`mt-3 overflow-hidden rounded-xl border ${
       twirl.media.length > 1 ? 'grid grid-cols-2 gap-2' : ''
     }`}
   >
-    {twirl.media.map((m) => (
-      m.type == 'image' ?
-      <img
-        key={m.id}
-        src={m.thumbnail}
-        alt={m.alt}
-        className="w-full h-auto object-cover"
-      /> : <div></div>
-    ))}
+    {twirl.media.map((m) =>
+      m.type === 'image' ? (
+        <img
+          key={m.id}
+          src={m.url} // ✅ changed from thumbnail -> url
+          alt={twirl.content.slice(0, 20) || 'media'} // fallback alt
+          className="w-full h-auto object-cover"
+        />
+      ) : m.type === 'video' ? (
+        <video
+          key={m.id}
+          controls
+          className="w-full h-auto rounded-xl"
+        >
+          <source src={m.url} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      ) : null
+    )}
   </div>
 )}
+
 
 
         {/* Polls */}
