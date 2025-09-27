@@ -22,7 +22,9 @@ const TwirlBox = ({ twirl }: TwirlBoxProps) => {
 
 
   return (
-    <div className="border rounded-2xl p-4 m-3 bg-white hover:bg-gray-50 transition">
+    <div
+    style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
+    className="border rounded-2xl p-4 m-3 bg-white hover:bg-gray-50 transition">
       {/* User Info + More Button */}
       <div className="flex justify-between items-start">
         <div className="flex gap-3">

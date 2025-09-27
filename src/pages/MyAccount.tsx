@@ -1,9 +1,9 @@
 import { Bookmark, Settings, User } from "lucide-react";
 import { useState } from "react";
+import Collections from "../components/my-account/Collections";
 import Profile from "../components/my-account/Profile";
+import SettingsPage from '../components/my-account/SettingsPage';
 
-const Collections = () => <div>Collections Content</div>;
-const SettingsPage = () => <div>Settings Content</div>;
 
 const MyAccount = () => {
   const [activeOption, setActiveOption] = useState(1);

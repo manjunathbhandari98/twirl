@@ -17,3 +17,35 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #0a0018;
+  --card-bg: #f9fafb;
+}
+
+.light {
+  --bg-color: #ffffff;
+  --text-color: #0a0018;
+  --button-color:#0a0018;
+  --card-bg: #f9fafb;
+}
+
+.dark {
+  --bg-color: #0a0018;
+  --text-color: #f9fafb;
+  --button-color:#f9fafb;
+  --card-bg: #0a0018;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card {
+  background-color: var(--card-bg);
+  transition: background-color 0.3s;
+}
+

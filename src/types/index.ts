@@ -10,6 +10,14 @@ export interface User {
   theme: string;
   avatar: string;
   verified?: boolean;
+  favorites? : Favorite[]
+}
+
+export interface Favorite{
+  id:string;
+   title: string; 
+   description: string; 
+   twirlIds: string[]
 }
 
 export interface Comment {

@@ -92,7 +92,7 @@ const Profile = () => {
         <h2 className="font-medium text-gray-700 my-4">Recent Posts</h2>
         {sortedTwirls.slice(0,visibleCount)
         .map(twirl =>(
-            <TwirlBox twirl={twirl} />
+            <TwirlBox key={twirl.id} twirl={twirl} />
         ))
         }
       </div>
