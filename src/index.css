@@ -20,7 +20,7 @@ body {
 
 :root {
   --bg-color: #ffffff;
-  --text-color: #0a0018;
+  --text-color: #06000f;
   --card-bg: #f9fafb;
 }
 
@@ -28,14 +28,26 @@ body {
   --bg-color: #ffffff;
   --text-color: #0a0018;
   --button-color:#0a0018;
+  --button-text-color:#f9fafb;
+  --gray-text:#2c2c2c;
   --card-bg: #f9fafb;
 }
 
 .dark {
-  --bg-color: #0a0018;
+  --bg-color: #06000f;
   --text-color: #f9fafb;
   --button-color:#f9fafb;
-  --card-bg: #0a0018;
+  --gray-text:#cacaca;
+  --button-text-color:#06000f;
+  --card-bg: #06000f;
+}
+
+.footer-text{
+  color:var(--gray-text);
+}
+
+.footer-text:hover{
+  color:#4349ff;
 }
 
 body {
@@ -49,3 +61,16 @@ body {
   transition: background-color 0.3s;
 }
 
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}

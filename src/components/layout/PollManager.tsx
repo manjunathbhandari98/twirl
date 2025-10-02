@@ -41,7 +41,7 @@ const PollManager = ({ onClose, onSave }: PollManagerProps) => {
   };
 
   return (
-    <div className="bg-gray-100 rounded-xl p-6 w-full my-5">
+    <div className="rounded-xl p-6 w-full my-5">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-semibold">Create Poll</h2>

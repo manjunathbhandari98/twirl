@@ -17,7 +17,7 @@ const FeedTabs = () =>{
           <button
             key={index}
             onClick={() => setActiveTab(index)}
-            className={`flex items-center gap-2 px-3 py-2 text-sm whitespace-nowrap transition-all
+            className={`flex items-center gap-2 px-3 py-2 text-md whitespace-nowrap transition-all
               ${
                 activeTab === index
                   ? "border-b-2 border-pink-600 font-medium text-pink-700"

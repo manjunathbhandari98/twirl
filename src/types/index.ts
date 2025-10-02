@@ -63,6 +63,7 @@ export interface Twirl {
   author: User;
   content: string;
   media?: MediaItem[];
+  hashtags?:string[]
   poll?: Poll;
   createdAt: Date; 
   reactions: Reactions;
@@ -90,3 +91,9 @@ export interface Notification {
   createdAt: Date; 
   isRead: boolean;
 }
+
+export type HashtagTrend = {
+  hashtag: string;
+  score: number;
+  postCount: number;
+};

@@ -17,7 +17,9 @@ const Collections = () =>{
     return(
         <div>
             <div className="flex justify-between items-center">
-                <h2 className="text-lg font-medium text-gray-800">My Collections</h2>
+                <h2 className="text-lg font-medium"
+                style={{color:'var(--gray-text)'}}
+                >My Collections</h2>
                 <button 
                 onClick={() => setNewCollectionModalOpen(true)}
                 className="p-2 cursor-pointer bg-blue-500 text-white rounded-xl flex gap-1">

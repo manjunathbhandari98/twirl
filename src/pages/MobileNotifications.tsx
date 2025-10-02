@@ -1,17 +1,11 @@
-import { MoveLeft } from 'lucide-react';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import type { RootState } from '../../app/store';
-import { mockNotifications } from '../../data/notifications';
-import {
-  setActiveTab,
-  setNotificationModalClose,
-} from '../../redux/NotificationSlice';
-import NotificationContainer from './NotificationContainer';
-import NotificationTab from './NotificationTab';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../app/store';
+import NotificationContainer from '../components/notification/NotificationContainer';
+import NotificationTab from '../components/notification/NotificationTab';
+import { mockNotifications } from '../data/notifications';
 
-const Notifications = () => {
-  const dispatch = useDispatch();
+const MobileNotifications = () => {
   const activeTab = useSelector(
     (state: RootState) => state.notification.activeTab
   );
@@ -44,20 +38,8 @@ const Notifications = () => {
     startIndex + pageSize
   );
 
-  const handleMoveBack = () => {
-    dispatch(setNotificationModalClose());
-    dispatch(setActiveTab('all'));
-  };
-
   return (
     <div className="mx-4">
-      <div className="flex justify-between w-full p-5">
-        <button onClick={handleMoveBack} className="cursor-pointer">
-          <MoveLeft />
-        </button>
-        <h2 className="">Notifications</h2>
-      </div>
-
       <NotificationTab />
 
       {paginated.map((notification) => (
@@ -94,4 +76,4 @@ const Notifications = () => {
   );
 };
 
-export default Notifications;
+export default MobileNotifications;

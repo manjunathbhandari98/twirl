@@ -18,7 +18,8 @@ export const twirls: Twirl[] = [
     },
     content:
       "Burgundy Private along with Louis Vuitton India, hosted an exclusive showcase of the LV Wedding Edit in Delhi - a celebration of bridal elegance and timeless luxury.",
-    media: [
+    hashtags:['#India', '#Delhi', '#Luxury', '#WeddingEdit', '#LouisVuitton', '#Fashion', '#BridalElegance'],
+      media: [
       {
         id: "m1",
         type: "image",
@@ -88,6 +89,7 @@ export const twirls: Twirl[] = [
       verified: true,
     },
     content: "The Frontend Race Poll",
+    hashtags:['#Frontend', '#React', '#Nextjs', '#Svelte', '#SolidJS', '#WebDevelopment', '#Poll'],
     createdAt: new Date("2025-09-24T08:45:00Z"),
     reactions: {
       like: 87,
@@ -132,6 +134,7 @@ export const twirls: Twirl[] = [
       avatar: "https://randomuser.me/api/portraits/women/44.jpg",
     },
     content: "Morning coffee + coding = perfect start ☕💻",
+    hashtags:['#Coffee', '#Coding', '#MorningVibes', '#DevLife'],
     media: [],
     createdAt: new Date("2025-09-24T06:45:00Z"),
     reactions: { like: 87, love: 15, laugh: 2, angry: 0, sad: 0, wow: 5 },
@@ -158,6 +161,7 @@ export const twirls: Twirl[] = [
       avatar: "https://randomuser.me/api/portraits/women/25.jpg",
     },
     content: "Check out this sunset 🌅 #nofilter",
+    hashtags:['#Sunset', '#Nature', '#Photography', '#NoFilter', '#EveningVibes'],
     media: [
       { id: "m3", type: "image", url: "https://picsum.photos/600/400?random=2" },
     ],
@@ -214,6 +218,7 @@ export const twirls: Twirl[] = [
       verified: false,
     },
     content: "Just deployed my first Next.js 15 app on Vercel! 🚀🔥",
+    hashtags:['#Nextjs', '#Vercel', '#WebDev', '#Launch', '#DevLife', '#JavaScript'],
     media: [
       {
         id: "m4",
@@ -247,6 +252,7 @@ export const twirls: Twirl[] = [
       verified: true,
     },
     content: "The Frontend Race Poll",
+    hashtags:['#Frontend', '#React', '#Nextjs', '#Svelte', '#SolidJS', '#Poll', '#WebDevelopment'],
     createdAt: new Date("2025-09-24T08:45:00Z"),
     reactions: { like: 87, love: 10, laugh: 2, angry: 0, sad: 0, wow: 1 },
     replyCount: 1,
@@ -286,6 +292,7 @@ export const twirls: Twirl[] = [
     },
     content:
       "Experimenting with scheduled posts ⏳ Stay tuned for tomorrow’s AI drop!",
+      hashtags:['#AI', '#ScheduledPosts', '#Innovation', '#TechTrends', '#Future'],
     createdAt: new Date("2025-09-25T10:00:00Z"),
     reactions: { like: 45, love: 5, laugh: 0, angry: 0, sad: 0, wow: 2 },
     replyCount: 0,
@@ -315,6 +322,7 @@ export const twirls: Twirl[] = [
       theme: "system",
     },
     content: "Started my weekend with a hot cappuccino ☕ and some TypeScript refactoring! #weekendVibes",
+    hashtags:['#WeekendVibes', '#Coffee', '#TypeScript', '#Coding', '#DevLife'],
     media: [
       {
         id: "m10",
@@ -349,6 +357,7 @@ export const twirls: Twirl[] = [
     },
     content:
       "Golden hour in Santorini hits differently. This view will never get old. 🌅💙",
+      hashtags:['#Travel', '#Santorini', '#GoldenHour', '#Wanderlust', '#SunsetViews'],
     media: [
       {
         id: "m3",
@@ -412,6 +421,7 @@ export const twirls: Twirl[] = [
     },
     content:
       "Just launched my first full-stack project! Open source & live now 👇 #devlife",
+      hashtags:['#FullStack', '#OpenSource', '#Launch', '#DevLife', '#CodingJourney'],
     media: [
       {
         id: "m5",
@@ -446,7 +456,8 @@ export const twirls: Twirl[] = [
     },
     content:
       "Morning workout 🔥 Nothing beats starting the day with strength. #fitness #motivation",
-    media: [
+    hashtags: ['#Fitness', '#Workout', '#Motivation', '#Strength', '#HealthyLifestyle'],
+      media: [
       {
         id: "m6",
         type: "video",
@@ -505,6 +516,7 @@ export const twirls: Twirl[] = [
       theme: "system",
     },
     content: "Finally tried out Svelte 5! Super smooth experience so far 🔥 Anyone else experimenting?",
+    hashtags:['#Svelte', '#WebDev', '#JavaScript', '#Frontend', '#DevLife'],
     media: [
       {
         id: "m11",

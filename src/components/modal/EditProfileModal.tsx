@@ -28,7 +28,9 @@ const EditProfileModal = ({ onClose }: ProfileModalProps) => {
 
   return (
     <div className="inset-0 fixed bg-black/80 w-full flex justify-center items-center">
-      <div className="rounded-xl p-4 bg-white w-xl overflow-y-auto scrollbar-hide">
+      <div className="rounded-xl p-4 w-xl overflow-y-auto scrollbar-hide"
+      style={{backgroundColor:'var(--bg-color)'}}
+      >
         {/* Header */}
         <div className="flex justify-between items-center">
           <h2 className="text-xl font-semibold">Edit Profile</h2>

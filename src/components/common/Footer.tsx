@@ -21,7 +21,7 @@ const Footer = () =>{
 return (
     <div className="text-sm flex flex-wrap gap-2">
         {footerLinks.map((item) =>(
-            <div key={item.id} className="flex text-gray-700 hover:text-blue-700 cursor-pointer">
+            <div key={item.id} className="flex footer-text cursor-pointer">
                 <Dot/>
                 <p>{item.item}</p>
             </div>
